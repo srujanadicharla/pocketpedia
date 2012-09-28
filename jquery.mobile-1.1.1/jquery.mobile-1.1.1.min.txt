@@ -1,5 +1,5 @@
 FILE QUARANTINED
 
 Microsoft Forefront Protection for Exchange Server removed a file since it was found to match a filter.
-File name: "pocketpedia.zip->jquery-1.8.1.js"
+File name: "pocketpedia.zip->jquery.mobile-1.1.1.min.js"
 Filter name: "FILE FILTER= FilterList 1: *.js"

@@ -1,73 +1,121 @@
-<!DOCTYPE html>
 <html><head> 
     <title>Pocket Pedia</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1" > 
     <link rel="stylesheet" href="jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" >
     <script src="jquery-1.8.1.js" ></script>
     <script src="jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js" ></script>
+    <style type="text/css">
+		.ui-page 
+		{ 
+			background: #383838;
+		}
+		h3
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        h2
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        h4
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        h5
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        p
+        {
+            color:#F2F2F2;
+            text-shadow: 2px 2px 2px #000;
+        }
+        li
+        {
+            color:#F2F2F2;
+            text-shadow: 2px 2px 2px #000;
+        }
+        b
+        {
+            color:#F2F2F2;
+            text-shadow: 2px 2px 2px #000;
+        }
+		#background
+		{
+			color: #383838;
+		}
+    </style>
 </head> 
-<body> 
-<div data-role="MAIN PAGE" >
-    <div data-role="header" >
-        <h2>POCKET PEDIA</h2>
-    </div>
-<br><br>
-
-<div data-role="content">
-    <div class="content-primary">
-        <ul data-role="listview"  data-filter="true">
-            <li><a href="health.html">
-                <img src="images/health.jpg" />
-                <h3>Health</h3>
+<body  id="background"> 
+<div data-role="page">
+<div data-role="header" data-theme="a">
+       <h2><div class="ui-btn-left"><font size="6">P</font><font size="3">OCKET</font>&nbsp;<font size="6">P</font><font size="3">EDIA</font></div>
+    <div data-role="header" data-position="fixed" data-theme="w">
+       <img src="images/ribbon2.png" class="ui-btn-right"></div></h2>
+	</div>
+<br>
+<div data-role="content" style="margin-right : 25px; margin-left : 25px;" data-theme="w">
+        <ul data-role="listview"  data-theme="w" class='someText' data-filter-theme="w" data-filter="true">
+            <li><a href="health.html" data-transition="none">
+                <img src="images/health.png" height="40" style="margin-top : 20px;" />
+                <h3>Fit for Life</h3>
                 <p>Care for your Healty Life</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/education.png" />
+            <li><a href="education.html" data-transition="none">
+                <img src="images/education.png" height="50" style="margin-top : 15px;" />
                 <h3>Education</h3>
                 <p>You Career growth</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/finance.jpg" />
+            <li><a href="arthashartha.html" data-transition="none">
+                <img src="images/finance.png"height="50" style="margin-top : 15px;" />
                 <h3>Arthashartha</h3>
                 <p>Money for your life !</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/astrology.jpg" />
+            <li><a href="astrology.html" data-transition="none">
+                <img src="images/astrology.png" height="50" style="margin-top : 13px;" />
                 <h3>Astrology</h3>
                 <p>Your fortune is here.</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/chef.jpg" />
+            <li><a href="kitchen_science.html" data-transition="none">
+                <img src="images/chef.png" height="50" style="margin-top : 13px;" />
                 <h3>Kitchen Science</h3>
                 <p>Prepare your own food.</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/fun.jpg" />
+            <li><a href="trivia.html" data-transition="none">
+                <img src="images/trivia.png" height="50" style="margin-top : 13px;" />
                 <h3>Trivia</h3>
                 <p>Entertainment !</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/fun.jpg" />
+            <li><a href="funcorner.html" data-transition="none">
+                <img src="images/fun.png" height="50" style="margin-top : 13px;" />
                 <h3>Fun Corner</h3>
                 <p>Smile keeps your worries away !</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/fun.jpg" />
+            <li><a href="hangout.html" data-transition="none">
+                <img src="images/travel.png" height="50" style="margin-top : 13px;" />
                 <h3>Hang out</h3>
                 <p>Travel around the world !</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/fun.jpg" />
+            <li><a href="howto.html" data-transition="none">
+                <img src="images/howto.png" height="50" style="margin-top : 13px; margin-left : 13px;" />
                 <h3>How to-</h3>
                 <p>Do it Yourself !</p></a>
             </li>
-            <li><a href="#">
-                <img src="images/fun.jpg" />
+            <li><a href="kindle.html" data-transition="none">
+                <img src="images/kindle.png" height="70" style="margin-top : 13px; margin-left : 13px;" />
                 <h3>Kindle</h3>
                 <p>Quotes and Inspiration.</p></a>
             </li>
-        </ul>
+        </ul><br><br>
     </div>    
-</div>
 
+<div data-role="footer">
+<h2>Developed by Srujan & Alok</h2>
+</div>
+	</div>
+	</div>
 </body></html>

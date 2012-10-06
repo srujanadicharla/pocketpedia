@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html><head> 
+    <title>Pocket Pedia</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" > 
+    <link rel="stylesheet" href="../jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" >
+    <script src="../jquery-1.8.1.js" ></script>
+    <script src="../jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js" ></script>
+
+    <script>
+function calculate()
+{
+    if(document.getElementById("firstname").value=="")
+    {
+        alert("Enter First name");
+        focus();
+        return true;
+    }
+    else if(document.getElementById("secondname").value=="")
+    {
+        alert("Enter Second name");
+        focus();
+        return true;
+    }
+    else
+    {
+        var fn=document.getElementById("firstname").value;
+        var sn=document.getElementById("secondname").value;
+        var check=0, asciiNum=0;
+        for (var i=0;i<fn.length;i++)
+        {
+            asciiNum = fn.charCodeAt(i);
+            alert(fn.charCodeAt(1));
+            if ((asciiNum>0 && asciiNum <=31) || (asciiNum>=91 && asciiNum<=96) || (asciiNum>=123))
+            {
+                check++;
+                return false; 
+            }
+        }
+        if (check > 0) {
+            alert("Entered name contains Illegal characters");
+        }
+        else
+        {
+        var i=0,
+            l_count=0,
+            o_count=0,
+            v_count=0,
+            e_count=0,
+            s_count=0;
+    
+        for(i=0;i<fn.length;i++)
+        {
+            if(fn.charAt(i).toLowerCase() == "l")
+                l_count++;
+            else if (fn.charAt(i).toLowerCase() == "o") {
+                o_count++;
+            }
+            else if (fn.charAt(i).toLowerCase() == "v") {
+                v_count++;
+            }
+            else if (fn.charAt(i).toLowerCase() == "e") {
+                e_count++;
+            }
+            else if (fn.charAt(i).toLowerCase() == "s") {
+                s_count++;
+            }
+        }
+        for(i=0;i<sn.length;i++)
+        {
+            if(sn.charAt(i).toLowerCase() == "l")
+                l_count++;
+            else if (sn.charAt(i).toLowerCase() == "o") {
+                o_count++;
+            }
+            else if (sn.charAt(i).toLowerCase() == "v") {
+                v_count++;
+            }
+            else if (sn.charAt(i).toLowerCase() == "e") {
+                e_count++;
+            }
+            else if (sn.charAt(i).toLowerCase() == "s") {
+                s_count++;
+            }
+        }
+        var lovecal = new Array();
+    
+        lovecal[0] = l_count;
+        lovecal[1] = o_count;
+        lovecal[2] = v_count;
+        lovecal[3] = e_count;
+        lovecal[4] = s_count;
+
+        lovecal[0] = lovecal[0]+lovecal[1];
+        lovecal[1] = lovecal[1]+lovecal[2];
+        lovecal[2] = lovecal[2]+lovecal[3];
+        lovecal[3] = lovecal[3]+lovecal[4];
+
+        lovecal[0] = lovecal[0]+lovecal[1];
+        lovecal[1] = lovecal[1]+lovecal[2];
+        lovecal[2] = lovecal[2]+lovecal[3];
+
+        lovecal[0] = lovecal[0]+lovecal[1];
+        lovecal[1] = lovecal[1]+lovecal[2];
+        
+        while(lovecal[0] >= 10)
+        {           
+            var a = lovecal[0].toString();
+            lovecal[0] = parseInt(a.charAt(0),10) + parseInt(a.charAt(1), 10);
+        }
+
+        while(lovecal[1] >= 10)
+        {
+            var b = lovecal[1].toString();
+            lovecal[1] = parseInt(b.charAt(0),10) + parseInt(b.charAt(1), 10);
+        }
+
+        if(lovecal[0]==0 && lovecal[1]==0)
+            alert("Worst case !! Don't even think of looking at each other\nYou got 0 Love Percentage");
+        else if(lovecal[0]>=0 && lovecal[0]<1 && lovecal[1]>0)
+        {
+            alert("Worse !  It's better you both maintain \"Little distance\" \n Your got " + lovecal[0] + lovecal[1] + " Love Percentage");
+        }
+        else if(lovecal[0]>=4 && lovecal[0]<7 && lovecal[1]>=0)
+        {
+            alert("Not bad ! You both can look each other, but maintain \"Little distance\" \n Your got " + lovecal[0] + lovecal[1] + " Love Percentage");
+        }
+        else if(lovecal[0]>=7 && lovecal[0]<9 && lovecal[1]>=0)
+        {
+        alert("Good ! You both can proceed, but may face some Up\'s and Down\'s\n Your got " + lovecal[0] + lovecal[1] + " Love Percentage");
+        }
+        else if(lovecal[0]>=9 && lovecal[1]>=0)
+        {
+        alert("Awesome ! You both are made for Each other\n Your got " + lovecal[0] + lovecal[1] + " Love Percentage");
+        }
+        }
+    }
+}
+</script>
+
+    <style type="text/css">
+		.ui-page 
+		{ 
+			background: #383838;
+		}
+        h3
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        h2
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        h4
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        h5
+        {
+            color:#F2F2F2;
+            text-shadow: 5px 5px 5px #000;
+        }
+        p
+        {
+            color:#F2F2F2;
+            text-shadow: 2px 2px 2px #000;
+        }
+        li
+        {
+            color:#F2F2F2;
+            text-shadow: 2px 2px 2px #000;
+        }
+        b
+        {
+            color:#F2F2F2;
+            text-shadow: 2px 2px 2px #000;
+        }
+    </style>
+</head>
+<body>
+<div data-role="MAIN PAGE" >
+<div  data-role="header" data-position="fixed" data-theme="w"  >
+                <a data-role="button" data-rel="back" data-transition="none" href="../index.html" >
+                  <img src="../images/backicon.png" width="35" height="35">
+                </a>            
+                <a data-role="button" data-transition="none" href="../index.html" >
+                <img src="../images/homeIcon.png" width="35" height="35">
+                </a>
+       <h2><img src="../images/ribbon2.png" style="margin-right : 55px;margin-top : 6px;" class="ui-btn-right"></h2>
+    </div>
+    </div>
+<br>
+<h3 style="text-align:left; margin-left : 20px;">Love Calculator</h3>
+<div data-role="collapsible-set" style="margin-right : 20px; margin-left : 20px;" data-theme="a" data-content-theme="w"><br>
+    <input type="text" id="firstname" placeholder="Enter first name"  /><br>
+    <input type="text" id="secondname" placeholder="Enter second name"  />
+    <input type="button" value="Calculate" onclick="calculate()">    
+
+</div>
+</body>
+</html>

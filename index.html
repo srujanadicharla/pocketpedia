@@ -4,118 +4,138 @@
     <link rel="stylesheet" href="jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" >
     <script src="jquery-1.8.1.js" ></script>
     <script src="jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js" ></script>
-    <style type="text/css">
-		.ui-page 
-		{ 
-			background: #383838;
-		}
-		h3
-        {
-            color:#F2F2F2;
-            text-shadow: 5px 5px 5px #000;
-        }
-        h2
-        {
-            color:#F2F2F2;
-            text-shadow: 5px 5px 5px #000;
-        }
-        h4
-        {
-            color:#F2F2F2;
-            text-shadow: 5px 5px 5px #000;
-        }
-        h5
-        {
-            color:#F2F2F2;
-            text-shadow: 5px 5px 5px #000;
-        }
-        p
-        {
-            color:#F2F2F2;
-            text-shadow: 2px 2px 2px #000;
-        }
-        li
-        {
-            color:#F2F2F2;
-            text-shadow: 2px 2px 2px #000;
-        }
-        b
-        {
-            color:#F2F2F2;
-            text-shadow: 2px 2px 2px #000;
-        }
-		#background
-		{
-			color: #383838;
-		}
-    </style>
-</head> 
-<body  id="background"> 
-<div data-role="page">
-<div data-role="header" data-theme="a">
-       <h2><div class="ui-btn-left"><font size="6">P</font><font size="3">OCKET</font>&nbsp;<font size="6">P</font><font size="3">EDIA</font></div>
-    <div data-role="header" data-position="fixed" data-theme="w">
-       <img src="images/ribbon2.png" class="ui-btn-right"></div></h2>
-	</div>
-<br>
-<div data-role="content" style="margin-right : 25px; margin-left : 25px;" data-theme="w">
-        <ul data-role="listview"  data-theme="w" class='someText' data-filter-theme="w" data-filter="true">
-            <li><a href="health.html" data-transition="none">
-                <img src="images/health.png" height="40" style="margin-top : 20px;" />
-                <h3>Fit for Life</h3>
-                <p>Care for your Healty Life</p></a>
-            </li>
-            <li><a href="education.html" data-transition="none">
-                <img src="images/education.png" height="50" style="margin-top : 15px;" />
-                <h3>Education</h3>
-                <p>You Career growth</p></a>
-            </li>
-            <li><a href="arthashartha.html" data-transition="none">
-                <img src="images/finance.png"height="50" style="margin-top : 15px;" />
-                <h3>Arthashartha</h3>
-                <p>Money for your life !</p></a>
-            </li>
-            <li><a href="astrology.html" data-transition="none">
-                <img src="images/astrology.png" height="50" style="margin-top : 13px;" />
-                <h3>Astrology</h3>
-                <p>Your fortune is here.</p></a>
-            </li>
-            <li><a href="kitchen_science.html" data-transition="none">
-                <img src="images/chef.png" height="50" style="margin-top : 13px;" />
-                <h3>Kitchen Science</h3>
-                <p>Prepare your own food.</p></a>
-            </li>
-            <li><a href="trivia.html" data-transition="none">
-                <img src="images/trivia.png" height="50" style="margin-top : 13px;" />
-                <h3>Trivia</h3>
-                <p>Entertainment !</p></a>
-            </li>
-            <li><a href="funcorner.html" data-transition="none">
-                <img src="images/fun.png" height="50" style="margin-top : 13px;" />
-                <h3>Fun Corner</h3>
-                <p>Smile keeps your worries away !</p></a>
-            </li>
-            <li><a href="hangout.html" data-transition="none">
-                <img src="images/travel.png" height="50" style="margin-top : 13px;" />
-                <h3>Hang out</h3>
-                <p>Travel around the world !</p></a>
-            </li>
-            <li><a href="howto.html" data-transition="none">
-                <img src="images/howto.png" height="50" style="margin-top : 13px; margin-left : 13px;" />
-                <h3>How to-</h3>
-                <p>Do it Yourself !</p></a>
-            </li>
-            <li><a href="kindle.html" data-transition="none">
-                <img src="images/kindle.png" height="70" style="margin-top : 13px; margin-left : 13px;" />
-                <h3>Kindle</h3>
-                <p>Quotes and Inspiration.</p></a>
-            </li>
-        </ul><br><br>
-    </div>    
+    <script>
+$(function(){
+  
+  var interval = setInterval(increment,100);
+  var current = 0;
 
-<div data-role="footer">
-<h2>Developed by Srujan & Alok</h2>
-</div>
-	</div>
-	</div>
-</body></html>
+  function increment(){
+    current++;
+    $('#counter').html(current+'%'); 
+    if(current == 100) { current = 0; }
+  }
+  
+  $('.load-bar').mouseover(function(){
+        clearInterval(interval);
+  }).mouseout(function(){
+      interval = setInterval(increment,100);
+    });
+
+});
+</script>
+<style>
+* { box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+    height: 100%;
+  background: #efeeea;
+  background: linear-gradient(#f9f9f9, #cecbc4);
+  color: #757575;
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+    width: 350px;
+  margin: 80px auto;
+}
+
+.wrapper .load-bar {
+  width: 100%;
+  height: 25px;
+  border-radius: 30px;
+  background: #dcdbd7;
+  position: relative;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.8),
+    inset 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.wrapper .load-bar:hover .load-bar-inner,
+.wrapper .load-bar:hover #counter {
+    animation-play-state: paused; 
+}
+
+.wrapper .load-bar-inner {
+  height: 99%;
+  width: 0%;
+  border-radius: inherit;
+  position: relative;
+  background: #c2d7ac;
+  background: linear-gradient(#e0f6c8, #98ad84);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 1px 5px rgba(0,0,0,0.3),
+    0 4px 5px rgba(0,0,0,0.3);
+  animation: loader 10s linear infinite;
+}
+
+.wrapper #counter {
+    position: absolute;
+  background: #eeeff3;
+  background: linear-gradient(#eeeff3, #cbcbd3);
+  padding: 5px 10px;
+  border-radius: 0.4em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 2px 4px 1px rgba(0,0,0,0.2),
+    0 1px 3px 1px rgba(0,0,0,0.1);
+  left: -25px;
+  top: -50px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 44px;
+  animation: counter 10s linear infinite;
+}
+
+.wrapper #counter:after {
+    content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #cbcbd3;
+  transform: rotate(45deg);
+  left: 50%;
+  margin-left: -4px;
+  bottom: -4px; 
+  box-shadow: 
+    3px 3px 4px rgba(0,0,0,0.2),
+    1px 1px 1px 1px rgba(0,0,0,0.1);
+  border-radius: 0 0 3px 0;
+}
+
+.wrapper h1 {
+  font-size: 28px;
+  padding: 20px 0 8px 0;
+}
+
+.wrapper p {
+  font-size: 13px;
+}
+
+@keyframes loader {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes counter {
+  from { left: -25px; }
+  to { left: 323px; }
+}
+</style>
+
+
+</head> 
+<div class="wrapper">
+  <div class="load-bar">
+    
+    <div class="load-bar-inner" data-loading="0">
+        <span id="counter"></span>
+    </div>
+  </div>
+  <h1>Loading</h1>
+  <p>Please wait...</p>
+</div></html>
